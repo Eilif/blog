@@ -1,0 +1,6 @@
+%h1 Welcome
+%p Read more #{link_to "about me", root_path}, head to the #{link_to "archive", root_path} for older projects, or check out my latest experiments below.
+- @posts.each do |post|
+  %h2= post.title
+  %p=  post.text
+
