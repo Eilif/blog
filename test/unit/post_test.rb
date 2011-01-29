@@ -18,8 +18,8 @@ class PostTest < ActiveSupport::TestCase
 
   test 'posts can have text' do
     p = Post.new
-    p.text = "Hei Maailmaa!"
-    assert_equal "Hei Maailmaa!", p.text
+    p.text = "Hei Maailma!"
+    assert_equal "Hei Maailma!", p.text
   end
 
   test 'posts must be 1 character or longer' do

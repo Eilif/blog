@@ -1,0 +1,20 @@
+%h1 Enter your comment
+
+= form_for :comment, :url => post_comments_path(@post) do |form|
+  = form.error_messages
+
+  %p
+    = form.label :creator_alias, 'your name'
+    = form.text_field :creator_alias
+
+  %p
+    = form.label :creator_email, 'email address'
+    =form.text_field :creator_email
+
+  %p
+    = form.label :comment_text, 'your comment'
+    = form.text_area :comment_text
+
+  %p
+    = form.submit "post your comment"
+

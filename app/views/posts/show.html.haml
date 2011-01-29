@@ -1,0 +1,5 @@
+%h1= @post.title
+%p= @post.text
+- @post.comments.each do |comment|
+  %p.creator-alias= comment.creator_alias
+  %div= comment.comment_text
