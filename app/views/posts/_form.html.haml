@@ -1,0 +1,13 @@
+= form_for @post do |form|
+  = form.error_messages
+
+  %p
+    = form.label :title, 'title'
+    = form.text_field :title
+
+  %p
+    = form.label :text, 'text'
+    = form.text_area :text
+
+  %p
+    = form.submit "post to blog"

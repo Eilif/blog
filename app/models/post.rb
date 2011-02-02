@@ -6,6 +6,6 @@ class Post < ActiveRecord::Base
   validates_presence_of :text, :length => { :minimum => 1 }
 
   has_many :comments, :dependent => :destroy
-  #has_many :tags
+  has_many :tags
 
 end

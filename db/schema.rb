@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110129011033) do
+ActiveRecord::Schema.define(:version => 20110201213303) do
 
   create_table "comments", :force => true do |t|
     t.string   "creator_alias"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(:version => 20110129011033) do
   create_table "posts", :force => true do |t|
     t.string   "title",      :limit => 100
     t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "text"
+    t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
