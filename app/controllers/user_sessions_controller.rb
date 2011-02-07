@@ -1,5 +1,7 @@
 class UserSessionsController < ApplicationController
 
+  skip_before_filter :require_user, :except => [:destroy]
+
   def new
     @usersession = UserSession.new
   end
@@ -11,6 +13,9 @@ class UserSessionsController < ApplicationController
     else
       render :action => :new
     end
+  end
+
+  def show
   end
 
   def destroy

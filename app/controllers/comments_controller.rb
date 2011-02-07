@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  skip_before_filter :require_user
 
   def new
     @post = Post.find(params[:post_id])

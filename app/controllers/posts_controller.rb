@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  skip_before_filter :require_user, :only => [:index, :show]
+
   def index
     @posts = Post.all :limit => 5, :order => 'id DESC'
   end
