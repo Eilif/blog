@@ -1,5 +1,6 @@
-%h1 Welcome
-%p Read more #{link_to "about me", root_path}, head to the #{link_to "archive", root_path} for older projects, or check out my latest experiments below.
+.menubox
+  =link_to "about me", root_path
+  =link_to "archive", root_path
 - @posts.each do |post|
   .transbox
     %h2= link_to post.title, post_path(post)

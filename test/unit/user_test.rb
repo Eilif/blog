@@ -27,4 +27,9 @@ class UserTest < ActiveSupport::TestCase
     assert !u.valid?
   end
 
+  test "user with login and password is valid" do
+    u = User.new(:login => "eilif", :password => "secret")
+    assert u.valid?
+  end
+
 end

@@ -23,15 +23,23 @@ class ActiveSupport::TestCase
       c
   end
 
+  def valid_user
+    u = User.new
+    u.login = "Urd"
+    u.password = "squid"
+    u.save!
+    u
+  end
+
+  def log_in
+    UserSession.create!(valid_user)
+  end
+
   def setup
     activate_authlogic
   end
 
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
-
-  # Add more helper methods to be used by all tests here...
+  def self.pending(name)
+    test(name){pending}
+  end
 end
