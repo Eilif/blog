@@ -4,6 +4,7 @@ PortfolioBlog::Application.routes.draw do
   
   resources :posts do
     resources :comments
+    resources :tags
   end
 
   resource :user_session

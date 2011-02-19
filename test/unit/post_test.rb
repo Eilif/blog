@@ -28,4 +28,24 @@ class PostTest < ActiveSupport::TestCase
     assert !p.valid?
   end
 
+  test 'posts can have many tags' do
+    p = valid_post
+    ["roots", "trunk", "branches"].each do |tag_text|
+      t = Tag.create!(:text => tag_text)
+      PostToTagConnector.create! :tag => t, :post => p
+    end
+    p.reload
+    assert_equal 3, p.tags.count
+    assert_equal "trunk", p.tags.second.text
+  end
+
+  test 'when post is deleted, its relation to tags is destroyed but tags remain' do
+    p = Post.create!(:title => "Hel's Ceiling", :text => "Laced with the roots of Yggdrasil.")
+    t = Tag.create!(:text => "roots")
+    pttc = PostToTagConnector.create! :tag => t, :post => p
+    p.destroy
+    assert_nil PostToTagConnector.find_by_id(pttc.id)
+    assert_equal "roots", Tag.find(t.id).text
+  end
+
 end

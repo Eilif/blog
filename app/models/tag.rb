@@ -2,9 +2,10 @@ class Tag < ActiveRecord::Base
 
   attr_accessible :text
 
-  belongs_to :post
+  has_many :post_to_tag_connectors, :dependent => :destroy
+  has_many :posts, :through => :post_to_tag_connectors
 
   validates_presence_of :text
-  validates_presence_of :post_id
+  validates_uniqueness_of :text
 
 end

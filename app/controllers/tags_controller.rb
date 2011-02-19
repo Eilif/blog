@@ -1,5 +1,13 @@
 class TagsController < ApplicationController
 
+  def index
+    @tags = Tags.all(params[:post_id])
+  end
+
+  def show
+    @tags = Tags.find(params[:post_id])
+  end
+
   def new
     @post = Post.find(params[:post_id])
     @tag = @post.tags.build

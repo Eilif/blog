@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery
   before_filter :require_user
 
@@ -19,9 +20,5 @@ class ApplicationController < ActionController::Base
   def require_user
     redirect_to root_path unless logged_in?
   end
-      
-      
-
-
 
 end

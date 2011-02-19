@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110208025643) do
+ActiveRecord::Schema.define(:version => 20110218035501) do
 
   create_table "comments", :force => true do |t|
     t.string   "creator_alias"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20110208025643) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "post_to_tag_connectors", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "post_id"
+    t.integer  "tag_id"
   end
 
   create_table "posts", :force => true do |t|

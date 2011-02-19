@@ -79,5 +79,13 @@ class CommentTest < ActiveSupport::TestCase
     assert !c.valid?
   end
 
+  test 'comments must be destroyed when associated post is destroyed' do
+    p = valid_post
+    c = Comment.new(:comment_text => "Puppies today!", :creator_alias => "Tyr", :creator_email => "tyr@aesir.org")
+    c.post = p
+    c.save!
+    p.destroy
+    assert_nil Comment.find_by_id(c.id)
+  end
 
 end
