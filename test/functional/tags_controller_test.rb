@@ -39,12 +39,4 @@ class TagsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "when logged in show should get tags appropriate to related post" do
-    log_in
-    @post = valid_post
-    @post.Tag.text = "unicorn"
-    get :show, :post_id => @post.to_param
-    assert_response :success
-  end
-
 end

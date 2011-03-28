@@ -1,4 +1,6 @@
 html {
+  margin: 0;
+  padding: 0;
   width: 100%;
   min-height: 100%;
   background-color: rgb(50, 39, 94);
@@ -16,16 +18,17 @@ html {
   );
 }
 
-header { text-align: left;}
-
 body {
   color: #456653;
-  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-family: 'IM Fell English', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 div.transbox {
-  width: 75%;
-  margin: 20px;
+  width: 70%;
+  margin: 15px;
+  float: right;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.3);
   border-width: thin;
@@ -40,7 +43,7 @@ div.transbox {
 div.menubox {
   width: 100px;
   margin: 10px;
-  float: right;
+  float: left;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.3);
   border-width: thin;
@@ -52,29 +55,49 @@ div.menubox {
   -webkit-box-shadow: 0px 0px 10px #fff;
 }
 
-div.topbox{
-  height: 35px;
+div.topbox {
+  height: 60px;
   width: 100%;
-  padding: 10px 5px 1px 5px;
-  margin: 5px 5px 40px 5px;
+  padding: 0;
+  margin: 0;
   border-style: transparent;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  background: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(0.3, rgba(0, 0, 0, 0.6)),
-      color-stop(0.64, rgba(0, 0, 0, 0))
-    );
-  background: -moz-linear-gradient(
-    left,
-    rgba(0, 0 , 0, 0.6) 30%,
-    rgba(0, 0, 0, 0) 64%
+  -moz-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.08, rgb(65, 57, 97)),
+    color-stop(0.64, rgb(50,39,94))
   );
+  background-image: -moz-linear-gradient(
+    center top,
+    rgb(65, 57, 97) 8%,
+    rgb(50,39,94) 64%
+  );
+
+}
+
+div.profilepicbox {
+  width: 220px;
+  height: 100%;
+  float: left;
+  margin: 0 0 0 10px;
 }
 
 a {
   color: #0D4A26;
   text-decoration: none;
+}
+
+h1 {
+  font-family: 'IM Fell DW Pica SC', Helvetica, sans-serif;
+  text-align: left;
+  text-shadow: #000 0px -1px 0, #413961 0 1px 0;
+  padding: 5px 0 0 10px;
+  margin: 0;
+}
+
+.clear {
+  clear: both;
 }

@@ -1,9 +1,11 @@
-.menubox
-  =link_to "about me", root_path
-  =link_to "archive", root_path
+.profilepicbox
+  = image_tag "headshot.jpg"
+  .menubox
+    =link_to "about me", root_path
+    =link_to "archive", root_path
 - @posts.each do |post|
   .transbox
     %h2= link_to post.title, post_path(post)
     %p= post.text
-    = link_to "comment on this post", new_post_comment_path(post)
-
+    %p= post.tag_texts
+    =link_to "comment on this post", new_post_comment_path(post)

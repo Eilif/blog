@@ -48,4 +48,15 @@ class PostTest < ActiveSupport::TestCase
     assert_equal "roots", Tag.find(t.id).text
   end
 
+  test 'tag names outputs the same number of post to tag connectors as the number of tags separated by commas and spaces it receives.' do
+    p = Post.create!(:title => "Hel's Ceiling", :text => "Laced with the roots of Yggdrasil.", :tag_texts => "world tree, Hel, roots")
+    assert_equal 3, p.post_to_tag_connectors.count
+  end
+
+  test 'tag names splits tags correctly when assigning to post' do
+    p = Post.create!(:title => "Hel's Ceiling", :text => "Laced with the roots of Yggdrasil.", :tag_texts => "world tree, Hel, roots")
+    assert_equal "world tree", p.tags.first.text
+    assert_equal "roots", p.tags.last.text
+  end
+
 end

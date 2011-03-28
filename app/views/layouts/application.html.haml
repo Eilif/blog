@@ -4,13 +4,15 @@
   %head
     %title Elizabeth's Code Blog
     = stylesheet_link_tag :all
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=IM+Fell+English'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC'
     = javascript_include_tag :defaults
     = csrf_meta_tag
 
   %body
     .topbox
-      %header Elizabeth Codes
+      %h1 Elizabeth Codes
     %p.notice= notice
     %p.alert= alert
     = yield
-    %footer &copy; 2011 EAO
+.clear
