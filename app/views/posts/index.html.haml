@@ -7,5 +7,5 @@
   .transbox
     %h2= link_to post.title, post_path(post)
     %p= post.text
-    %p= post.tag_texts
+    .tags= post.tag_texts
     =link_to "comment on this post", new_post_comment_path(post)

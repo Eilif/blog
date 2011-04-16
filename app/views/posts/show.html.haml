@@ -1,8 +1,9 @@
 .transbox
-  %h1= @post.title
+  %h2= @post.title
   %p= @post.text
-  %p= @post.tag_texts
+  .tags= @post.tag_texts
   %p= link_to 'Edit', edit_post_path
   - @post.comments.each do |comment|
-    %p.creator-alias= comment.creator_alias
+    .allpurposedivider
+    %h4.creator-alias= comment.creator_alias
     %div= comment.comment_text
